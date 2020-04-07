@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">GegeQuotes</string>
+    <string-array name="quotes_array">
+        <item>Il vaut mieux faire des conneries que s\'économiser. - Gerard Depardieu</item>
+        <item>Aujourd\'hui, personne ne se distingue de rien, à commencer par les hommes politiques. Journalistes, acteurs, pareil. On ne vit pas dans un monde où l\'on peut se distinguer.</item>
+        <item>Quand je voyage dans le monde, les gens retiennent surtout que j\'ai pissé dans un avion - Gerard Depardieu</item>
+        <item>Vous savez que la mémoire d’un poisson est d\’une seconde seulement ? A force de regarder ces poissons rouges dans leur bocal, le téléspectateur devant son écran n\’a plus qu\’une seconde de mémoire lui aussi. - Gerard Depardieu</item>
+        <item>Avant il y avait les mouches, maintenant il y a la télévision. - Gerard Depardieu</item>
+        <item>La cérémonie des César, ça m\'a toujours fait chier - Gerard Depardieu</item>
+        <item>Y\'a rien de plus chiant qu\'être acteur ! - Gerard Depardieu</item>
+        <item>Les Lumières sont éteintes et ce n\'est pas avec les gens qui nous gouvernent qu\'on peut rallumer n\'importe quelle lampe - Gerard Depardieu</item>
+    </string-array>
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">HeatConverter</string>
+    <string name="error">Cette valeur est incompatible</string>
+    <string name="celsius_field_advise">Temperature en  degres celcius</string>
+    <string name="result">"Resultat: "</string>
+    <string name="fahrenheight_field_advise">" temperature en degres fahrenheight"</string>
+    <string name="empty_error">Entrez une valeur dans le champ celcius ou fehrenheight</string>
+    <string name="button_convert">Convertir</string>
+</resources>

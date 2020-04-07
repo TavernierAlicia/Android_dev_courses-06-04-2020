@@ -2,6 +2,7 @@ package fr.mds.lifecycle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -13,6 +14,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Log.d(TAG, "LifeCycle - onCreate");
+
+        //get ressources
+        Resources resources = getResources();
+        String helloWorldStr = resources.getString(R.string.hello_string);
+
+        Log.d(TAG, helloWorldStr);
+        String cancelAndroidStr = resources.getString(android.R.string.cancel);
+
+        Log.d(TAG, cancelAndroidStr);
     }
 
     @Override

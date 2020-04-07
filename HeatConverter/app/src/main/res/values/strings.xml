@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">HeatConverter</string>
+    <string name="error">Incompatible value</string>
+    <string name="celsius_field_advise">"Celcius temperature "</string>
+    <string name="fahrenheight_field_advise">Fahrenheight temperature</string>
+    <string name="result">"Result: "</string>
+    <string name="none" translatable="false"></string>
+    <string name="button_convert">Convert</string>
+    <string name="empty_error">Enter one value in celcius or fahrenheight field</string>
+
+</resources>

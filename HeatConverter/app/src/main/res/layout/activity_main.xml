@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+    <TextView
+        android:id="@+id/tv_error"
+        android:layout_width="216dp"
+        android:layout_height="58dp"
+        android:textSize="15dp"
+        android:textColor="@color/colorError"
+        android:text="@string/none" />
+    <EditText
+        android:id="@+id/et_to_conv_c"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textSize="25dp"
+        android:inputType="numberSigned"
+        android:hint="@string/celsius_field_advise"
+        android:drawableRight="@drawable/ic_action_name"/>
+
+    <EditText
+        android:id="@+id/et_to_conv_f"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textSize="25dp"
+        android:inputType="numberSigned"
+        android:hint="@string/fahrenheight_field_advise"
+        android:drawableRight="@drawable/fahrenheit_img"/>
+
+    <Button
+        android:id="@+id/bt_convert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button" />
+
+
+</LinearLayout>
