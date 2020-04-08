@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "337318685020",
+    "firebase_url": "https://aliciademoproject.firebaseio.com",
+    "project_id": "aliciademoproject",
+    "storage_bucket": "aliciademoproject.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:337318685020:android:59824d4578c38884363999",
+        "android_client_info": {
+          "package_name": "fr.myschool.demoproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "337318685020-6lece83c2e1dsb5jjd10lm5vekgkuoo8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEntqUH9ydn3MLU8eX2N0_7AOzEQNJYvQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "337318685020-6lece83c2e1dsb5jjd10lm5vekgkuoo8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
