@@ -2,6 +2,7 @@ package fr.myschool.demoproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -14,7 +15,7 @@ import java.util.List;
 
 import fr.myschool.demoproject.adapter.VirusListAdapter;
 
-public class MainActivity extends AppCompatActivity
+public class SpinnerActivity extends Activity
     implements View.OnClickListener {
     private Button bt_main_1, bt_main_2, bt_main_3;
     private Spinner sp_main_select;
@@ -23,7 +24,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_spinner);
 
         bt_main_1 = findViewById(R.id.bt_main_1);
         bt_main_2 = findViewById(R.id.bt_main_2);

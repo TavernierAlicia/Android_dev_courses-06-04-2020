@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="32dp"
+    android:gravity="center"
+    android:orientation="vertical"
+
+    >
+    <Button
+        android:id="@+id/bt_menu_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Demo Spinner"/>
+
+    <Button
+        android:id="@+id/bt_menu_picasso"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Demo Picasso"/>
+
+    <Button
+        android:id="@+id/bt_menu_demo_extra"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Demo Extra"/>
+
+    <Button
+        android:id="@+id/bt_open_url"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Open Url"/>
+
+</LinearLayout>

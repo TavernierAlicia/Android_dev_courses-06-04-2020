@@ -1,6 +1,8 @@
 package fr.myschool.demoproject;
 
-public class Virus {
+import java.io.Serializable;
+
+public class Virus implements Serializable {
     private String name;
     private String countryOrigin;
     private int mortalityRate;
