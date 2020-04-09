@@ -1,10 +1,10 @@
 <resources>
-    <string name="app_name">GegeQuotes</string>
-    <string name="error">You can\'t add an empty string</string>
-    <string name="add_quote_hint">Enter your quote</string>
-    <string name="add_button">Add</string>
-    <string name="validate_btn">Confirm</string>
-    <string name="cancel_btn">Cancel</string>
+    <string name="app_name" translatable="false">GegeQuotes</string>
+    <string name="error" translatable="false">Vous ne pouvez pas ajouter un champ vide</string>
+    <string name="add_quote_hint" translatable="false">Entrez votre citation</string>
+    <string name="add_button" translatable="false">Ajouter</string>
+    <string name="validate_btn">Valider</string>
+    <string name="cancel_btn">Annuler</string>
     <string-array name="quotes_array">
         <item>Il vaut mieux faire des conneries que s\'économiser. - Gerard Depardieu</item>
         <item>Aujourd\'hui, personne ne se distingue de rien, à commencer par les hommes politiques. Journalistes, acteurs, pareil. On ne vit pas dans un monde où l\'on peut se distinguer.</item>

@@ -1,12 +1,19 @@
 package fr.myschool.geekquote.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Quote {
+public class Quote implements Serializable {
 
     private String strQuote = "";
     private int rating = 0;
     private Date creationDate;
+
+    public Quote(String strQuote, int rating, Date creationDate) {
+        this.strQuote = strQuote;
+        this.rating = rating;
+        this.creationDate = creationDate;
+    }
 
     public String getStrQuote() {
         return strQuote;

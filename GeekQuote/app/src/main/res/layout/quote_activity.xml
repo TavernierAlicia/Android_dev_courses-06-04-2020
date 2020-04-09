@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_quote_activity"
+        android:layout_width="match_parent"
+        android:textSize="25sp"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        tools:text="gdgdd"
+        />
+
+    <TextView
+        android:id="@+id/tv_quote_date"
+        android:layout_width="match_parent"
+        android:layout_gravity="end"
+        android:layout_height="wrap_content"
+        android:textAlignment="textEnd"
+        android:paddingRight="10dp"
+        tools:text="rrrrrrrrrrr"
+
+        />
+
+    <TextView
+        android:id="@+id/tv_quote_rate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="gshgdhksjdwlkewd"
+
+        />
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:isIndicator="false"
+        android:numStars="5"
+        android:stepSize="1.0" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/bt_rate_cancel"
+            android:layout_width="wrap_content"
+            android:paddingRight="10dp"
+            android:layout_height="match_parent"
+            android:text="@string/cancel_btn"
+        />
+
+        <Button
+            android:id="@+id/bt_rate_validate"
+            android:layout_width="wrap_content"
+            android:paddingLeft="10dp"
+            android:layout_height="match_parent"
+            android:text="@string/validate_btn"
+            />
+    </LinearLayout>
+</LinearLayout>

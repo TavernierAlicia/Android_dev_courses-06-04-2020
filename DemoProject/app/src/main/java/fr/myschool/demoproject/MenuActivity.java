@@ -71,7 +71,6 @@ public class MenuActivity extends Activity implements View.OnClickListener {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         Log.d(TAG, "Demoproject - onActivityResult");
         Log.d(TAG, "resultCode : "+resultCode);
-        Log.d(TAG, "data : "+data);
 
         if (data != null && data.getExtras() != null) {
             String response = data.getExtras().getString("response");

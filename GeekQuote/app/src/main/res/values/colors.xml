@@ -6,6 +6,6 @@
     <color name="redWine">#722F37</color>
     <color name="communistRed">#FF1A00</color>
     <color name="planePeeYellow">#E1E114</color>
-    <color name="TchernobylGrey">#808080</color>
-    <color name="RacoonGrey">#555555</color>
+    <color name="TchernobylGrey">#DCDCDC</color>
+    <color name="GooseWhite">#FFFFFF</color>
 </resources>

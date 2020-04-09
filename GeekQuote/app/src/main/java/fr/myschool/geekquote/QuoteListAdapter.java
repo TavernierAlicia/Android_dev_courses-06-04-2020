@@ -1,6 +1,8 @@
 package fr.myschool.geekquote;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,19 +13,23 @@ import androidx.annotation.NonNull;
 
 import java.util.ArrayList;
 
-public class QuoteListAdapter extends ArrayAdapter {
+import fr.myschool.geekquote.model.Quote;
+
+public class QuoteListAdapter extends ArrayAdapter  {
+
+    public static final String TAG = "GeekQuote";
 
     private final Context context;
 
-    QuoteListAdapter(Context context, ArrayList<String> quotes) {
+    QuoteListAdapter(Context context, ArrayList<Quote> quotes) {
         super(context, R.layout.quote_item, quotes);
         this.context = context ;
     }
 
-    private ArrayList<String> list = new ArrayList<>();
+    private ArrayList<Quote> list = new ArrayList<>();
 
-    void addItem(String text) {
-        list.add(text);
+    void addItem(Quote quote) {
+        list.add(quote);
         notifyDataSetChanged();
     }
 
@@ -43,18 +49,36 @@ public class QuoteListAdapter extends ArrayAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, @NonNull ViewGroup parent) {
+    public View getView(final int position, View convertView, @NonNull ViewGroup parent) {
         if (convertView == null) {
             convertView = LayoutInflater.from(context).inflate(R.layout.quote_item, parent, false);
         }
 
-        ((TextView)(convertView.findViewById(R.id.tv_quote))).setText(list.get(position));
+        ((TextView)(convertView.findViewById(R.id.tv_quote))).setText(list.get(position).getStrQuote());
+        ((TextView)(convertView.findViewById(R.id.tv_listquote_rate))).setText(""+list.get(position).getRating());
         if (position % 2 == 0) {
-            convertView.findViewById(R.id.master_block).setBackgroundColor(context.getResources().getColor(R.color.RacoonGrey));
+            convertView.findViewById(R.id.master_block).setBackgroundColor(context.getResources().getColor(R.color.GooseWhite));
         } else {
             convertView.findViewById(R.id.master_block).setBackgroundColor(context.getResources().getColor(R.color.TchernobylGrey));
         }
 
+        //set Activity
+        convertView.findViewById(R.id.master_block).setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, QuoteActivity.class);
+                intent.putExtra("QUOTE", list.get(position));
+                intent.putExtra("INDEX", position);
+                ((Activity)context).startActivityForResult(intent, 1);
+            }
+        });
+
         return convertView;
+    }
+
+    void editItem(Quote editedQuote, int position) {
+        list.set(position, editedQuote);
+        notifyDataSetChanged();
     }
 }
