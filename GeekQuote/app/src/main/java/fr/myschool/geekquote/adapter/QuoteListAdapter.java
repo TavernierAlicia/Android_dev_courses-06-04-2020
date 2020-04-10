@@ -1,4 +1,4 @@
-package fr.myschool.geekquote;
+package fr.myschool.geekquote.adapter;
 
 import android.app.Activity;
 import android.content.Context;
@@ -11,8 +11,11 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
+import fr.myschool.geekquote.R;
+import fr.myschool.geekquote.activity.QuoteActivity;
 import fr.myschool.geekquote.model.Quote;
 
 public class QuoteListAdapter extends ArrayAdapter  {
@@ -21,14 +24,14 @@ public class QuoteListAdapter extends ArrayAdapter  {
 
     private final Context context;
 
-    QuoteListAdapter(Context context, ArrayList<Quote> quotes) {
+    public QuoteListAdapter(Context context, ArrayList<Quote> quotes) {
         super(context, R.layout.quote_item, quotes);
         this.context = context ;
     }
 
     private ArrayList<Quote> list = new ArrayList<>();
 
-    void addItem(Quote quote) {
+    public void addItem(Quote quote) {
         list.add(quote);
         notifyDataSetChanged();
     }
@@ -68,7 +71,7 @@ public class QuoteListAdapter extends ArrayAdapter  {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, QuoteActivity.class);
-                intent.putExtra("QUOTE", list.get(position));
+                intent.putExtra("QUOTE", (Serializable) list.get(position));
                 intent.putExtra("INDEX", position);
                 ((Activity)context).startActivityForResult(intent, 1);
             }
@@ -77,8 +80,14 @@ public class QuoteListAdapter extends ArrayAdapter  {
         return convertView;
     }
 
-    void editItem(Quote editedQuote, int position) {
+    public void editItem(Quote editedQuote, int position) {
         list.set(position, editedQuote);
+        notifyDataSetChanged();
+    }
+
+    // Dans l'adapter
+    public void setItems(ArrayList<Quote> quotesList) {
+        list = quotesList ;
         notifyDataSetChanged();
     }
 }

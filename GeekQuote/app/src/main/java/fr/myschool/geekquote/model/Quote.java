@@ -1,9 +1,12 @@
 package fr.myschool.geekquote.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.io.Serializable;
 import java.util.Date;
 
-public class Quote implements Serializable {
+public class Quote implements Serializable, Parcelable {
 
     private String strQuote = "";
     private int rating = 0;
@@ -44,4 +47,36 @@ public class Quote implements Serializable {
         return this.strQuote;
 
     }
+
+    protected Quote(Parcel in) {
+        strQuote = in.readString();
+        rating = in.readInt();
+        long tmpCreationDate = in.readLong();
+        creationDate = tmpCreationDate != -1 ? new Date(tmpCreationDate) : null;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(strQuote);
+        parcel.writeInt(rating);
+        parcel.writeLong(creationDate != null ? creationDate.getTime() : -1L);
+    }
+
+    @SuppressWarnings("unused")
+    public static final Parcelable.Creator<Quote> CREATOR = new Parcelable.Creator<Quote>() {
+        @Override
+        public Quote createFromParcel(Parcel in) {
+            return new Quote(in);
+        }
+
+        @Override
+        public Quote[] newArray(int size) {
+            return new Quote[size];
+        }
+    };
 }

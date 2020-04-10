@@ -1,31 +1,63 @@
-package fr.myschool.geekquote;
+package fr.myschool.geekquote.activity;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RatingBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import fr.myschool.geekquote.BuildConfig;
+import fr.myschool.geekquote.R;
 import fr.myschool.geekquote.model.Quote;
 
 public class QuoteActivity extends AppCompatActivity {
     public static final String TAG = "GeekQuote";
+    SharedPreferences sharedPref;
     int position;
     Quote quote;
     Button bt_rate_cancel, bt_rate_validate;
     TextView tv_quote_activity, tv_quote_rate, tv_quote_date;
     RatingBar ratingBar;
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.custom_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.logout) {
+            final Context context = this;
+            sharedPref = getSharedPreferences(BuildConfig.APPLICATION_ID+".SharedPreferences", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPref.edit();
+            editor.putBoolean("isUserConnected", false);
+            editor.apply();
+            Log.e("GeekQuote", "Connected: "+sharedPref.getBoolean("isUserConnected", false));
+            Intent intent = new Intent(context, ConnectActivity.class);
+            startActivity(intent);
+            finishAffinity();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,7 +86,7 @@ public class QuoteActivity extends AppCompatActivity {
                 quote.setRating((int) ratingBar.getRating());
                 Intent returnIntent = new Intent();
                 returnIntent.putExtra("INDEX", position);
-                returnIntent.putExtra("RESULT_QUOTE", quote);
+                returnIntent.putExtra("RESULT_QUOTE", (Serializable) quote);
                 setResult(Activity.RESULT_OK, returnIntent);
                 finish();
                 Log.e("GeekQuote", "Rating"+quote.getRating());

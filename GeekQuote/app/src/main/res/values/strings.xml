@@ -5,6 +5,15 @@
     <string name="add_button">Add</string>
     <string name="validate_btn">Confirm</string>
     <string name="cancel_btn">Cancel</string>
+    <string name="connect_title">Log in</string>
+    <string name="connect_username_title">Username</string>
+    <string name="connect_username_hint">user: test, pwd: test</string>
+    <string name="connect_password_title">Password</string>
+    <string name="modified_rate">Rate Modified!</string>
+    <string name="added_quote">Quote Added!</string>
+    <string name="wrong_ids">Wrong userid or password</string>
+    <string name="empty_ids">Empty userid or password</string>
+    <string name="connected">Connected</string>
     <string-array name="quotes_array">
         <item>Il vaut mieux faire des conneries que s\'économiser. - Gerard Depardieu</item>
         <item>Aujourd\'hui, personne ne se distingue de rien, à commencer par les hommes politiques. Journalistes, acteurs, pareil. On ne vit pas dans un monde où l\'on peut se distinguer.</item>
